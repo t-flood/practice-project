@@ -29,7 +29,6 @@ const Test = () => {
       setNameList(nameItems);
     });
   }, []);
-  console.log(nameList);
 
   return (
     <div>
@@ -41,7 +40,11 @@ const Test = () => {
         </label>
         <input type="submit" value="Submit" />
       </form>
-      <p>{nameList}</p>
+      <ul>
+        {nameList.map((x) => (
+          <li>{x}</li>
+        ))}
+      </ul>
     </div>
   );
 };
