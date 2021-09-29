@@ -20,15 +20,10 @@ const Test = () => {
   useEffect(() => {
     axios.get("/users.json").then((response) => {
       const names = response.data;
-      console.log(names);
-      const people = [];
       const nameItems = names.map((x) => x.name);
-      console.log(nameItems);
-
-      nameItems.map((x) => setNameList((nameList) => [...nameList, x]));
       setNameList(nameItems);
     });
-  }, []);
+  }, [name]);
 
   return (
     <div>
